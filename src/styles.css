@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; padding: 20px;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+        background-image: url('https://th.bing.com/th/id/OIP.W56_HFl4cHqQ-PRz0fjLYAHaD5?w=319&h=180&c=7&r=0&o=5&pid=1.7');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0.90; /* set the opacity to 50% */
+      }

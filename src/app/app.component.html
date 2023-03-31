@@ -1,33 +1,116 @@
 <div class="container">
-<h4>Basic mat-select</h4>
-<mat-form-field appearance="fill">
-  <mat-label>Favorite flavor</mat-label>
-  <mat-select (selectionChange)="onSelectionChange($event)">
-    <mat-option *ngFor="let food of foods" [value]="food.viewValue"  >
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+  
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Session Highlights
+      </mat-panel-title>
+      <mat-panel-description>
+        Let's get the ball rolling... ⚽️
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <mat-list role="list" *ngFor="let item of items">
+        <mat-list-item role="listitem" style="background-color: rgb(74, 74, 74); color: white;"> 💡 {{item}}</mat-list-item>
+      </mat-list>
+  </mat-expansion-panel>
 
 
-<h3>{{today | date}}</h3>
-<h3>{{today | date: userOption}}</h3>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        DOM tree
+      </mat-panel-title>
+      <mat-panel-description>
+        Angular uses this technique to interact with DOM programmatically
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div style="width: 85%">
+      <p>The <b>Document Object Model (DOM)</b> is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects in a hierarchical tree-like structure called the DOM tree.
+        <br>
+        In the DOM tree, the entire HTML document is represented as a tree structure, with the HTML element being the root node of the tree. Each node in the tree represents an HTML element, such as a paragraph, a heading, a hyperlink, an image, etc.</p>
+    </div>
+    
+  </mat-expansion-panel>
 
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Angular & DOM 
+      </mat-panel-title>
+      <mat-panel-description>
+        Data binding & Change detection
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+   
+    <span ></span>One of the main features of Angular is its ability to handle and manipulate the DOM tree in an efficient way.
+    <h4>
+      Data binding
+    </h4>
+    Angular uses it to connect the application data with the view (i.e., the DOM tree). Data binding allows changes in the application data to automatically update the view and vice versa, without requiring manual manipulation of the DOM tree.
+    
+    When an Angular application is loaded, it first compiles the templates of the components to generate a view, which is then rendered in the browser as the DOM tree. The framework then tracks changes to the application data and updates the view as necessary.
+    <br>
+    <h4>
+      Change detection
+    </h4>
+    Angular uses it to detect changes in the application data and update the view. The framework employs a hierarchical structure of change detectors, which is similar to the DOM tree, to efficiently detect and propagate changes throughout the application.
+    
+    In summary, Angular handles the DOM tree by using data binding to connect the application data with the view, compiling templates to generate a view, and employing change detection to efficiently detect and propagate changes throughout the application.
+    
+  </mat-expansion-panel>
 
-<br>
-<h4>Two way binding</h4>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Two way binding
+      </mat-panel-title>
+      <mat-panel-description>
+        Angular uses this technique to interact with DOM programmatically
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="flat-layout">
+      <input style="height:30px" type="string" [(ngModel)]="userInput">
+      <h3 style="margin-left: 40px">Hello, {{userInput}}</h3>
+    </div>
+  </mat-expansion-panel>
 
-<input type="string" [(ngModel)]="userInput">
-<p>hello, {{userInput}}</p>
-</div>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        For loop &  Pipes
+      </mat-panel-title>
+      <mat-panel-description>
+        Angular provide pre defined directives
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="flat-layout">
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite flavor</mat-label>
+        <mat-select (selectionChange)="onSelectionChange($event)">
+          <mat-option *ngFor="let food of foods" [value]="food.viewValue"  >
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div style="height: 80px">
+        <h3 style="top:0px">{{today | date}}</h3>
+        <h3>{{today | date: userOption}}</h3>
+      </div>
+    </div>
+     
+      
+  </mat-expansion-panel>
 
-<br>
-<h3>Routing</h3>
-<div>
-  <button (click)="switch('/home')">Home</button>
-  <button (click)="switch('/about')">About</button>
-</div>
-<router-outlet></router-outlet>
-
-
-
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span><a class="link" href="https://angular.io/guide/routing-overview">Routing</a></span>
+      </mat-panel-title>
+      <mat-panel-description>
+        
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <button (click)="switch('/home')">Home</button>
+      <button (click)="switch('/about')">About</button>
+      <router-outlet></router-outlet>
+  </mat-expansion-panel>

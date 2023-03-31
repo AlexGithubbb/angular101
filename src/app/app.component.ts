@@ -9,6 +9,18 @@ import { Food } from './models/foods.model';
 })
 export class AppComponent {
   title = 'angular101';
+  items: string[] = [
+    'Share code examples of common Angular components (Component, Service, Pipe, etc.)',
+    'Explain the Angular architecture and how the pieces fit together',
+    'Discuss Angular CLI and how to build and deploy Angular apps',
+    'Teach Angular routing and how to set up routes in an app',
+    'Cover Angular forms and reactive forms in detail',
+    'Explain Angular lifecycle hooks and when to use them',
+    'Share tips and tricks for improving Angular development workflow',
+    'Answer questions from attendees and have an open Q&A session',
+    'Teach Angular testing and how to write unit and integration tests',
+  ]
+  panelOpenState: boolean = false;
   foods: Food[] = [
     {value: 'shortDate', viewValue: 'shortDate'},
     {value: 'mediumDate', viewValue: 'mediumDate'},
